@@ -1,0 +1,155 @@
+@import 'root';
+@import 'mixins';
+
+html {
+  font-size: 24px;
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul.slick-dots,
+ul.breadcrumb {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+img {
+  object-fit: cover;
+  pointer-events: none;
+}
+body {
+  font-family: $font; // FF MAIN
+  cursor: default;
+  background-color: $bgc;
+  color: $text;
+  min-height: 100vh;
+}
+
+section {
+  position: relative;
+}
+
+p {
+  color: $text;
+}
+
+.hidden {
+  display: none;
+}
+.wrapper {
+  position: relative;
+  width: 1216px;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: $font;
+  font-weight: 700;
+  color: $title;
+}
+
+h2 {
+  font-size: 36px;
+  font-family: $font;
+  font-weight: 700;
+  color: $title;
+}
+
+h3 {
+  font-size: 24px;
+  font-family: $font;
+  font-weight: 700;
+  color: $title;
+}
+
+a {
+  color: $text;
+  display: inline-block;
+  text-decoration: none;
+  transition: $quad;
+}
+
+textarea,
+button,
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: $font;
+  border: none;
+  outline: none;
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.7;
+  }
+}
+
+button {
+  cursor: pointer;
+  @extend %button;
+}
+
+// убирает цвет автокомплита у инпута
+input {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    font-size: 1rem;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.header {
+  &__about {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    height: 160px;
+  }
+  &__adress {
+    width: 371px;
+  }
+  &__phones {
+    text-align: right;
+  }
+  &__phone-link {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  &__nav {
+    background-color: $blue;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 2 1 auto;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      height: 60px;
+      transition: ease-in-out 0.2s;
+
+      &:hover {
+        background-color: $red;
+      }
+    }
+  }
+}
